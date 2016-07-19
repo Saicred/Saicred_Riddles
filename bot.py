@@ -3,7 +3,7 @@ import asyncio
 import donotshow
 import logging
 
-
+# Logging for INFO and DEBUG
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -21,6 +21,7 @@ async def on_ready():
     print('------')
 
 
+# Tests bot by counting messages, sleeping, and pinging.
 @client.event
 async def on_message(message):
     if message.content.startswith('!test'):
